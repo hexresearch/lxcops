@@ -1,0 +1,56 @@
+name:                lxcops
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/hexresearch/lxcops#readme
+license:             BSD3
+author:              Sergey Ivanov
+maintainer:          ivanovs-4@yandex.ru
+copyright:           2017 Hexresearch
+category:            System
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:
+    System.LxcOps
+    System.LxcOps.FreeDsl
+    System.LxcOps.Types
+    System.LxcOps.Wrapper
+  build-depends:       base >= 4.7 && < 5
+                     , filepath
+                     , HSH
+                     , interpolatedstring-perl6
+                     , iproute
+                     , megaparsec
+                     , mtl
+                     , parser-combinators
+                     , process
+                     , safe
+                     , text
+                     , transformers-free
+                     , unix
+  default-language:    Haskell2010
+  default-extensions:
+    DeriveFunctor
+    GeneralizedNewtypeDeriving
+    LambdaCase
+    QuasiQuotes
+    RecordWildCards
+    ScopedTypeVariables
+
+test-suite lxcops-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  other-modules:       BasicSpec
+  build-depends:       base
+                     , lxcops
+                     , hspec
+                     , interpolatedstring-perl6
+                     , QuickCheck
+  default-extensions:
+        OverloadedStrings
+        QuasiQuotes
