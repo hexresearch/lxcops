@@ -1,16 +1,11 @@
-# lxcops
-
-Это обёртка над консольными командами lxc.
-Интерфейс — как в библиотеке https://hackage.haskell.org/package/lxc, но без
-использования `bindings-lxc`, и реализован только частично, по необходимости.
-
-#### Пример использования
-
-[Main.hs](./examples/lxcops-example/src/Main.hs)
-
-
-```haskell
 module Main where
+
+-- Compile and run this:
+-- ```
+-- stack build
+-- stack install
+-- sudo lxcops-example
+-- ```
 
 import Data.Monoid
 import Control.Applicative
@@ -52,4 +47,3 @@ main = do
   withContainer (Container "new-name" Nothing) $ do
       ci <- containerInfo
       liftIO $ putStrLn $ "Clone: " <> show ci
-```
