@@ -1,0 +1,20 @@
+resolver: lts-9.17
+packages:
+- .
+- location:
+    git: https://github.com/hexresearch/lxcops
+    commit: 61991cc208e3005f058c25bdaa0ae0533913b623
+  extra-dep: true
+extra-deps:
+- HSH-2.1.3
+- transformers-free-1.0.1
+flags: {}
+extra-package-dbs: []
+nix:
+  enable: false
+  packages:
+    - binutils
+    - git
+    - gmp
+    - openssl
+    - zlib
