@@ -1,8 +1,12 @@
 # lxcops
 
+Это обёртка над консольными командами lxc.
+Интерфейс — как в библиотеке https://hackage.haskell.org/package/lxc, но без
+использования `bindings-lxc`, и реализован только частично, по необходимости.
+
 #### Пример использования
 
-```
+```haskell
 import Control.Monad (when)
 import Control.Monad.IO.Class (liftIO)
 
